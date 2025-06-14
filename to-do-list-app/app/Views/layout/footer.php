@@ -1,10 +1,11 @@
 </div> <!-- penutup <div class="container"> dari header -->
-
-<footer class="bg-light text-center py-3 mt-5 border-top">
+<footer class="bg-light text-center py-3 mt-auto border-top">
     <div class="container">
-        <small>© <?= date('Y') ?> ToDoList App with CodeIgniter 4</small>
+        <small>© <?= date('Y') ?> ToDoList App JWP</small>
     </div>
 </footer>
+
+</div> <!-- penutup div.flex-column -->
 
 <script src="<?= base_url('assets/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
 </body>
