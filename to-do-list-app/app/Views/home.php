@@ -1,10 +1,17 @@
 <?= $this->include('layout/header') ?>
 
-<div class="d-flex justify-content-between align-items-center mb-4">
-    <h2 class="mb-0"><?= esc($title) ?></h2>
-    <a href="<?= base_url('tasks/create') ?>" class="btn btn-outline-primary">Add</a>
+<div class="mb-4">
+    <h2 class="mb-3"><?= esc($title) ?></h2>
+
+    <!-- Form Tambah Task -->
+    <form action="<?= base_url('tasks/add') ?>" method="post" class="d-flex gap-2">
+        <?= csrf_field() ?>
+        <input type="text" name="title" class="form-control" placeholder="Masukkan tugas..." required>
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
 </div>
 
+<!-- Tabel Task -->
 <table class="table table-bordered">
     <thead class="table-light">
         <tr>
@@ -20,6 +27,7 @@
                 <tr>
                     <td class="text-center">
                         <form action="<?= base_url('tasks/toggle/' . $todo['id']) ?>" method="post">
+                            <?= csrf_field() ?>
                             <input type="checkbox"
                                    name="status"
                                    onchange="this.form.submit()"

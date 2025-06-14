@@ -39,5 +39,19 @@ class ToDoList extends BaseController
         return redirect()->back();
     }
 
+    public function add()
+    {
+        $title = $this->request->getPost('title');
+
+        if (!empty(trim($title))) {
+            $model = new \App\Models\TodoModel();
+            $model->insert([
+                'title'  => $title,
+                'status' => 'Belum'
+            ]);
+        }
+
+        return redirect()->back();
+    }
 
 }
