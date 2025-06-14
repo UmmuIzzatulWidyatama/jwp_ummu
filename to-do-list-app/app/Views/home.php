@@ -32,6 +32,7 @@
                     <td><?= esc($todo['status']) ?></td>
                     <td>
                         <form action="<?= base_url('tasks/delete/' . $todo['id']) ?>" method="post" onsubmit="return confirm('Yakin ingin menghapus?')">
+                            <?= csrf_field() ?>
                             <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
                         </form>
                     </td>

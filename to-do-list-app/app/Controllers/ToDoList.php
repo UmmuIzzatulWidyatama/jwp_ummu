@@ -28,4 +28,16 @@ class ToDoList extends BaseController
         return redirect()->back();
     }
 
+    public function delete($id)
+    {
+        $model = new \App\Models\TodoModel();
+
+        if ($model->find($id)) {
+            $model->delete($id);
+        }
+
+        return redirect()->back();
+    }
+
+
 }
